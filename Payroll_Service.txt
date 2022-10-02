@@ -39,3 +39,20 @@ mysql> desc employee_payroll;
 | Start  | date        | NO   |     | NULL    |                |
 +--------+-------------+------+-----+---------+----------------+
 4 rows in set (0.01 sec)
+
+mysql> insert into employee_payroll (Name, Salary, Start) values
+    -> ('Bharat', 80000, '2022-09-29'),
+    -> ('Yash', 80000, '2022-09-28'),
+    -> ('Mohit', 90000, '2022-07-05');
+Query OK, 3 rows affected (0.01 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+mysql> select * from employee_payroll;
++----+--------+--------+------------+
+| Id | Name   | Salary | Start      |
++----+--------+--------+------------+
+|  1 | Bharat |  80000 | 2022-09-29 |
+|  2 | Yash   |  80000 | 2022-09-28 |
+|  3 | Mohit  |  90000 | 2022-07-05 |
++----+--------+--------+------------+
+3 rows in set (0.00 sec)
