@@ -16,4 +16,5 @@ insert into employee_payroll (Name, Salary, Start) values
 ('Bharat', 80000, '2022-09-29'),
 ('Yash', 80000, '2022-09-28'),
 ('Mohit', 90000, '2022-07-05');
+
 select * from employee_payroll;
