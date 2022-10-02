@@ -254,3 +254,35 @@ mysql> select * from employee_payroll;
 |  5 | Sonal  |  80000 | 2022-07-24 | F      | 7775892458  | Tumsar  | Designing  |
 +----+--------+--------+------------+--------+-------------+---------+------------+
 5 rows in set (0.00 sec)
+
+mysql> alter table employee_payroll add BasicPay decimal(10, 2) NOT NULL default 0;
+Query OK, 0 rows affected (0.01 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> alter table employee_payroll add Deductions decimal(10, 2) NOT NULL default 0;
+Query OK, 0 rows affected (0.01 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> alter table employee_payroll add TaxablePay decimal(10, 2) NOT NULL default 0;
+Query OK, 0 rows affected (0.01 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> alter table employee_payroll add IncomeTax decimal(10, 2) NOT NULL default 0;
+Query OK, 0 rows affected (0.01 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> alter table employee_payroll add NetPay decimal(10, 2) NOT NULL default 0;
+Query OK, 0 rows affected (0.01 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> select * from employee_payroll;
++----+--------+--------+------------+--------+-------------+---------+------------+----------+------------+------------+-----------+--------+
+| Id | Name   | Salary | Start      | Gender | PhoneNumber | Address | Department | BasicPay | Deductions | TaxablePay | IncomeTax | NetPay |
++----+--------+--------+------------+--------+-------------+---------+------------+----------+------------+------------+-----------+--------+
+|  1 | Bharat |  80000 | 2022-09-29 | M      | 7559205894  | Tumsar  | HR         |     0.00 |       0.00 |       0.00 |      0.00 |   0.00 |
+|  2 | Yash   |  80000 | 2022-09-28 | M      | 9158924884  | Tumsar  | HR         |     0.00 |       0.00 |       0.00 |      0.00 |   0.00 |
+|  3 | Mohit  |  90000 | 2022-07-05 | M      | 9975481258  | Tumsar  | Marketing  |     0.00 |       0.00 |       0.00 |      0.00 |   0.00 |
+|  4 | Aachal |  80000 | 2022-05-10 | F      | 7484464458  | Tumsar  | Designing  |     0.00 |       0.00 |       0.00 |      0.00 |   0.00 |
+|  5 | Sonal  |  80000 | 2022-07-24 | F      | 7775892458  | Tumsar  | Designing  |     0.00 |       0.00 |       0.00 |      0.00 |   0.00 |
++----+--------+--------+------------+--------+-------------+---------+------------+----------+------------+------------+-----------+--------+
+5 rows in set (0.00 sec)

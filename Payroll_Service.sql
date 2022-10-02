@@ -57,3 +57,10 @@ update employee_payroll set Department='HR' where Name = 'Bharat' or Name='Yash'
 update employee_payroll set Department='Designing' where Name = 'Aachal' or Name = 'Sonal';
 update employee_payroll set Department='Marketing' where Name = 'Mohit';
 select * from employee_payroll;
+
+alter table employee_payroll add BasicPay decimal(10, 2) NOT NULL default 0;
+alter table employee_payroll add Deductions decimal(10, 2) NOT NULL default 0;
+alter table employee_payroll add TaxablePay decimal(10, 2) NOT NULL default 0;
+alter table employee_payroll add IncomeTax decimal(10, 2) NOT NULL default 0;
+alter table employee_payroll add NetPay decimal(10, 2) NOT NULL default 0;
+select * from employee_payroll;
