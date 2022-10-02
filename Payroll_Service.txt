@@ -116,3 +116,83 @@ mysql> select * from employee_payroll;
 |  5 | Sonal  |  80000 | 2022-07-24 | F      |
 +----+--------+--------+------------+--------+
 5 rows in set (0.00 sec)
+
+mysql> select SUM(Salary) as TotalSalary from employee_payroll where Gender='F' group by Gender;
++-------------+
+| TotalSalary |
++-------------+
+|      160000 |
++-------------+
+1 row in set (0.00 sec)
+
+mysql> select AVG(Salary) from employee_payroll where Gender='F' group by Gender;
++-------------+
+| AVG(Salary) |
++-------------+
+|  80000.0000 |
++-------------+
+1 row in set (0.00 sec)
+
+mysql> select MAX(Salary) from employee_payroll where Gender='F' group by Gender;
++-------------+
+| MAX(Salary) |
++-------------+
+|       80000 |
++-------------+
+1 row in set (0.00 sec)
+
+mysql> select MIN(Salary) from employee_payroll where Gender='F' group by Gender;
++-------------+
+| MIN(Salary) |
++-------------+
+|       80000 |
++-------------+
+1 row in set (0.00 sec)
+
+mysql> select COUNT(Id) from employee_payroll where Gender='F' group by Gender;
++-----------+
+| COUNT(Id) |
++-----------+
+|         2 |
++-----------+
+1 row in set (0.00 sec)
+
+mysql> select SUM(Salary) as TotalSalary from employee_payroll where Gender='M' group by Gender;
++-------------+
+| TotalSalary |
++-------------+
+|      250000 |
++-------------+
+1 row in set (0.00 sec)
+
+mysql> select AVG(Salary) from employee_payroll where Gender='M' group by Gender;
++-------------+
+| AVG(Salary) |
++-------------+
+|  83333.3333 |
++-------------+
+1 row in set (0.00 sec)
+
+mysql> select MAX(Salary) from employee_payroll where Gender='M' group by Gender;
++-------------+
+| MAX(Salary) |
++-------------+
+|       90000 |
++-------------+
+1 row in set (0.00 sec)
+
+mysql> select MIN(Salary) from employee_payroll where Gender='M' group by Gender;
++-------------+
+| MIN(Salary) |
++-------------+
+|       80000 |
++-------------+
+1 row in set (0.00 sec)
+
+mysql> select COUNT(Id) from employee_payroll where Gender='M' group by Gender;
++-----------+
+| COUNT(Id) |
++-----------+
+|         3 |
++-----------+
+1 row in set (0.00 sec)

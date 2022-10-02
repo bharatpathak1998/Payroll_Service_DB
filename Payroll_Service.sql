@@ -30,3 +30,15 @@ alter table employee_payroll add Gender char(1);
 update employee_payroll set Gender='F' where Name = 'Sonal' or Name='Aachal';
 update employee_payroll set Gender='M' where Name = 'Bharat' or Name='Yash' or Name='Mohit';
 select * from employee_payroll;
+
+select SUM(Salary) as TotalSalary from employee_payroll where Gender='F' group by Gender;
+select AVG(Salary) from employee_payroll where Gender='F' group by Gender;
+select MAX(Salary) from employee_payroll where Gender='F' group by Gender;
+select MIN(Salary) from employee_payroll where Gender='F' group by Gender;
+select COUNT(Id) from employee_payroll where Gender='F' group by Gender;
+
+select SUM(Salary) as TotalSalary from employee_payroll where Gender='M' group by Gender;
+select AVG(Salary) from employee_payroll where Gender='M' group by Gender;
+select MAX(Salary) from employee_payroll where Gender='M' group by Gender;
+select MIN(Salary) from employee_payroll where Gender='M' group by Gender;
+select COUNT(Id) from employee_payroll where Gender='M' group by Gender;
