@@ -18,3 +18,6 @@ insert into employee_payroll (Name, Salary, Start) values
 ('Mohit', 90000, '2022-07-05');
 
 select * from employee_payroll;
+
+select Salary from employee_payroll where Name='Mohit';
+select Salary from employee_payroll where Start between CAST('2022-07-05' AS DATE) AND DATE(NOW());

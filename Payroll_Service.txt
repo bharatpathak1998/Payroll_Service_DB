@@ -56,3 +56,21 @@ mysql> select * from employee_payroll;
 |  3 | Mohit  |  90000 | 2022-07-05 |
 +----+--------+--------+------------+
 3 rows in set (0.00 sec)
+
+mysql> select Salary from employee_payroll where Name='Mohit';
++--------+
+| Salary |
++--------+
+|  90000 |
++--------+
+1 row in set (0.00 sec)
+
+mysql> select Salary from employee_payroll where Start between CAST('2022-07-05' AS DATE) AND DATE(NOW());
++--------+
+| Salary |
++--------+
+|  80000 |
+|  80000 |
+|  90000 |
++--------+
+3 rows in set (0.00 sec)
