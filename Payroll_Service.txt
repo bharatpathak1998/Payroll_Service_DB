@@ -196,3 +196,61 @@ mysql> select COUNT(Id) from employee_payroll where Gender='M' group by Gender;
 |         3 |
 +-----------+
 1 row in set (0.00 sec)
+
+mysql> alter table employee_payroll add PhoneNumber varchar(10);
+Query OK, 0 rows affected (0.02 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> alter table employee_payroll add Address varchar(20) NOT NULL default 'Tumsar';
+Query OK, 0 rows affected (0.01 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> alter table employee_payroll add Department varchar(20) NOT NULL default '';
+Query OK, 0 rows affected (0.01 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql>
+mysql> update employee_payroll set PhoneNumber='7559205894' where Name = 'Bharat';
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update employee_payroll set PhoneNumber='9158924884' where Name = 'Yash';
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update employee_payroll set PhoneNumber='9975481258' where Name='Mohit';
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update employee_payroll set PhoneNumber='7775892458' where Name='Sonal';
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update employee_payroll set PhoneNumber='7484464458' where Name='Aachal';
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql>
+mysql> update employee_payroll set Department='HR' where Name = 'Bharat' or Name='Yash';
+Query OK, 2 rows affected (0.00 sec)
+Rows matched: 2  Changed: 2  Warnings: 0
+
+mysql> update employee_payroll set Department='Designing' where Name = 'Aachal' or Name = 'Sonal';
+Query OK, 2 rows affected (0.00 sec)
+Rows matched: 2  Changed: 2  Warnings: 0
+
+mysql> update employee_payroll set Department='Marketing' where Name = 'Mohit';
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from employee_payroll;
++----+--------+--------+------------+--------+-------------+---------+------------+
+| Id | Name   | Salary | Start      | Gender | PhoneNumber | Address | Department |
++----+--------+--------+------------+--------+-------------+---------+------------+
+|  1 | Bharat |  80000 | 2022-09-29 | M      | 7559205894  | Tumsar  | HR         |
+|  2 | Yash   |  80000 | 2022-09-28 | M      | 9158924884  | Tumsar  | HR         |
+|  3 | Mohit  |  90000 | 2022-07-05 | M      | 9975481258  | Tumsar  | Marketing  |
+|  4 | Aachal |  80000 | 2022-05-10 | F      | 7484464458  | Tumsar  | Designing  |
+|  5 | Sonal  |  80000 | 2022-07-24 | F      | 7775892458  | Tumsar  | Designing  |
++----+--------+--------+------------+--------+-------------+---------+------------+
+5 rows in set (0.00 sec)
